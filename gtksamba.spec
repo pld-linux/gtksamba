@@ -15,6 +15,11 @@ GtkSamba  is a GUI  tool for the  Configuration of  the Samba, the SMB
 file server on  X11/Unix. It will read,  edit and write /etc/smb.conf,
 an alternate configuration file, or from a network. It uses the GTK toolkit.
 
+%description -l pl
+GtkSamba jest narzêdziem GUI s³u¿±cym do konfiguracji Samby, serwera SMB
+na systemach uniksowych. Pozwala odczytaæ, modyfikowaæ i zapisaæ /etc/smb.conf,
+alternatywny plik konfiguracyjny lub dane z sieci. Wykorzystuje bibliotekê GTK.
+
 %package static
 Summary:	GtkSamba is a GUI tool to configure the SMB file server.
 Group:		Applications/Networking
