@@ -41,9 +41,9 @@ toolkit.
 ./configure \
 --prefix=%{_prefix}/X11R6 \
 	--without-gnome
-make CC="gcc -static $RPM_OPT_FLAGS"
+%{__make} CC="gcc -static $RPM_OPT_FLAGS"
 mv src/gtksamba src/gtksamba-static
-make CC="gcc $RPM_OPT_FLAGS"
+%{__make} CC="gcc $RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
