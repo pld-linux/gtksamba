@@ -9,7 +9,7 @@ Group(pl):	Aplikacje/Sieciowe
 License:	GPL
 URL:		http://www.open-systems.com/gtksamba.html
 Vendor:		Perry Piplani <coder@open-systems.com>
-Source0:	%{name}-%{version}.tar.gz
+Source0:	ftp://ibiblio.org/pub/Linux/X11/gtkbuffet/apps/gtksamba/%{name}-%{version}.tar.gz
 Requires:	samba
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,6 +55,9 @@ install -d $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 install src/gtksamba $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 install src/gtksamba-static $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post static
 if [ ! -e %{_prefix}/X11R6/bin/gtksamba ]; then
 	cd %{_prefix}/X11R6/bin;
@@ -65,9 +68,6 @@ fi
 if [ -L %{_prefix}/X11R6/bin/gtksamba ]; then
 	rm -f %{_prefix}/X11R6/bin/gtksamba;
 fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
