@@ -1,0 +1,11 @@
+--- gtksamba-0.3.2pl1/src/prefs.c~	Tue Feb 19 05:23:55 2002
++++ gtksamba-0.3.2pl1/src/prefs.c	Tue Feb 19 05:23:55 2002
+@@ -2,7 +2,7 @@
+ #include "gtksamba.h"
+ #include <unistd.h>
+ 
+-#define DEF_SMB_CONF  "/etc/smb.conf"
++#define DEF_SMB_CONF  "/etc/samba/smb.conf"
+ #define DEF_RESTART  "/etc/rc.d/init.d/smb restart"
+ 
+ static GtkWidget *pbox=NULL;
