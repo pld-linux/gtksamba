@@ -8,6 +8,7 @@ Vendor:		Perry Piplani <coder@open-systems.com>
 Group:		X11/Applications/Networking
 URL:		http://www.open-systems.com/gtksamba.html
 Source0:	ftp://ibiblio.org/pub/Linux/X11/gtkbuffet/apps/gtksamba/%{name}-%{version}.tar.gz
+# Source0-md5:	bd19a461d455b76764ac143d385d9f23
 Patch0:		%{name}-smb.conf_path_fix.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
