@@ -38,6 +38,11 @@ file server on X11/Unix. It will read, edit and write /etc/smb.conf,
 an alternate configuration file, or from a network. It uses the GTK
 toolkit.
 
+%description static -l pl
+GtkSamba jest narzêdziem GUI do konfigurowania Samby, serwera plików
+SMB na X11/Uniksie. Czyta, edytuje i zapisuje /etc/smb.conf, plik
+alternatywny b±d¼ z sieci. U¿ywa GTK.
+
 %prep
 %setup -q
 
