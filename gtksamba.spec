@@ -15,8 +15,6 @@ BuildRequires:	gtk+-devel
 Requires:	samba
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 GtkSamba is a GUI tool for the Configuration of the Samba, the SMB
