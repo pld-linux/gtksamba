@@ -8,7 +8,7 @@ URL:		http://www.open-systems.com/gtksamba.html
 Vendor:		Perry Piplani <coder@open-systems.com>
 Source:		%{name}-%{version}.tar.gz
 Requires:	samba
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 GtkSamba  is a GUI  tool for the  Configuration of  the Samba, the SMB
