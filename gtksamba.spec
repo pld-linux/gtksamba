@@ -1,8 +1,10 @@
-Summary:	GtkSamba is a GUI tool to configure the SMB file server.
+Summary:	GtkSamba is a GUI tool to configure the SMB file server
+Summary(pl):	Graficzne narzêdzie do konfigurowania serwera plików SMB
 Name:		gtksamba
 Version:	0.3.2pl1
 Release:	1
 Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 License:	GPL
 URL:		http://www.open-systems.com/gtksamba.html
@@ -24,8 +26,10 @@ SMB na systemach uniksowych. Pozwala odczytaæ, modyfikowaæ i zapisaæ
 Wykorzystuje bibliotekê GTK.
 
 %package static
-Summary:	GtkSamba is a GUI tool to configure the SMB file server.
+Summary:	GtkSamba is a GUI tool to configure the SMB file server
+Summary(pl):	Graficzne narzêdzie do konfigurowania serwera plików SMB
 Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 
 %description static
@@ -39,27 +43,27 @@ toolkit.
 
 %build
 ./configure \
---prefix=%{_prefix}/X11R6 \
+	--prefix=%{_prefix}/X11R6 \
 	--without-gnome
-%{__make} CC="gcc -static $RPM_OPT_FLAGS"
-mv src/gtksamba src/gtksamba-static
-%{__make} CC="gcc $RPM_OPT_FLAGS"
+%{__make} CC="%{__cc} -static %{rpmcflags}"
+mv -f src/gtksamba src/gtksamba-static
+%{__make} CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
-install -s -g 0 -o 0 -m 755 src/gtksamba $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
-install -s -g 0 -o 0 -m 755 src/gtksamba-static $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
+install src/gtksamba $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
+install src/gtksamba-static $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 %post static
 if [ ! -e %{_prefix}/X11R6/bin/gtksamba ]; then
-cd %{_prefix}/X11R6/bin;
-	ln -s gtksamba-static gtksamba;
+	cd %{_prefix}/X11R6/bin;
+	ln -sf gtksamba-static gtksamba;
 fi
 
 %preun static
 if [ -L %{_prefix}/X11R6/bin/gtksamba ]; then
-rm %{_prefix}/X11R6/bin/gtksamba;
+	rm -f %{_prefix}/X11R6/bin/gtksamba;
 fi
 
 %clean
