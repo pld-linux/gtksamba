@@ -38,7 +38,7 @@ Wykorzystuje bibliotekê GTK.
 rm -f missing
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--without-gnome
 %{__make}
