@@ -24,6 +24,9 @@ Group(uk):	X11/Прикладн╕ Програми/Мережа
 URL:		http://www.open-systems.com/gtksamba.html
 Source0:	ftp://ibiblio.org/pub/Linux/X11/gtkbuffet/apps/gtksamba/%{name}-%{version}.tar.gz
 Patch0:		%{name}-smb.conf_path_fix.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gtk+-devel
 Requires:	samba
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
