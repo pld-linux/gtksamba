@@ -1,5 +1,5 @@
 Summary:	GtkSamba is a GUI tool to configure the SMB file server
-Summary(pl.UTF-8):   Graficzne narzędzie do konfigurowania serwera plików SMB
+Summary(pl.UTF-8):	Graficzne narzędzie do konfigurowania serwera plików SMB
 Name:		gtksamba
 Version:	0.3.2pl1
 Release:	3
